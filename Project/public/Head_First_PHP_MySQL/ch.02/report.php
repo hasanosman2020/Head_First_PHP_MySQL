@@ -26,7 +26,7 @@
     $email = $_POST['email'];
     $other = $_POST['other'];
 
-    $dbc = mysqli_connect('localhost', 'root', 'root', 'learning_material')
+    $dbc = mysqli_connect('localhost', 'aliens_abduction_user', 'hasanosman')
     or die('Error connecting to database');
 
     $query = "INSERT INTO aliens_abduction(first_name, last_name,when_it_happened, how_long, how_many, alien_description, 'what_they_did', fang_spotted, other_email)"."VALUES('$firstname', '$lastname', '$when_it_happened', '$how_long', '$how_many', '$alien_description', '$fang_spotted', '$what_they_did', '$fang_spotted', '$email', '$other')"; 

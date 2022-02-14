@@ -21,22 +21,12 @@
     $how_long = $_POST['howlong'];
     $how_many = $_POST['howmany'];
     $alien_description = $_POST['aliendescription'];
+    $fang_spotted = $_POST['fangspotted'];
     $what_they_did = $_POST['whattheydid'];
     $fang_spotted = $_POST['fangspotted'];
     $email = $_POST['email'];
     $other = $_POST['other'];
 
-    $dbc = mysqli_connect('localhost', 'root', 'root', 'learning_material')
-    or die('Error connecting to database');
-
-    $query = "INSERT INTO aliens_abduction(first_name, last_name,when_it_happened, how_long, how_many, alien_description, 'what_they_did', fang_spotted, other_email)"."VALUES('$firstname', '$lastname', '$when_it_happened', '$how_long', '$how_many', '$alien_description', '$fang_spotted', '$what_they_did', '$fang_spotted', '$email', '$other')"; 
-
-    $result = mysqli_query($dbc, $query)
-    or die('Error querying databse');
-
-    mysqli_close($dbc);
-
-    /*
     $to = 'hasan79.hoa@gmail.com';
     $subject = 'Aliens Abducted Me- Abduction Report';
     $msg = "$firstname was abducted $when_it_happened and was gone for $how_long.\n" . "Number of aliens: $how_many\n'" .
@@ -44,7 +34,7 @@
         "Fang spotted: $fang_spotted\n" .
         "Other comments: $other";
     mail($to, $subject, $msg, 'From:' . $email);
-*/
+
     echo 'Thanks for submitting the form. <br />';
     echo 'You were abducted.' . $when_it_happened;
     echo ' and were gone for ' . $how_long . '<br />';
